@@ -1,36 +1,27 @@
-🚀 Smart Resource & Demand Prediction API
 
-(Spring Boot + Java + DSA + Machine Learning)
+🚀 Smart Resource Prediction API
+
+(Spring Boot REST API)
 
 📌 Project Overview
 
-The Smart Resource & Demand Prediction API is a Spring Boot–based RESTful backend application that analyzes historical resource (energy) demand and predicts future demand using Java logic, DSA-based feature engineering, and a Machine Learning model.
+The Smart Resource Prediction API is a Spring Boot–based RESTful backend application that processes resource demand data and provides analytical results through JSON-based APIs.
 
-This project demonstrates how backend APIs, core programming fundamentals, and ML models can be integrated to solve real-world demand forecasting problems.
+This project focuses on Spring Boot fundamentals, REST API design, and JSON request/response handling, tested using Thunder Client.
 
-🎯 Problem Statement
+🎯 Objective
 
-Resource demand (such as electricity or energy) varies due to:
+To build a clean and structured Spring Boot REST API that:
 
-Daily usage patterns
+Accepts data in JSON format
 
-Sudden spikes
+Processes input using Java logic
 
-Long-term trends
+Returns meaningful responses
 
-Manual estimation is inefficient and inaccurate.
-This API automates:
-
-Demand analysis
-
-Feature extraction
-
-Future demand prediction
-
-using Java logic + ML, exposed through REST APIs.
+Can be tested easily using Thunder Client
 
 🛠️ Technologies Used
-Backend
 
 Java
 
@@ -40,174 +31,111 @@ Spring Web (REST APIs)
 
 Maven
 
-Core Concepts
-
-DSA (Arrays, loops, conditionals)
-
-OOPS
-
-Feature Engineering
-
-Machine Learning
-
-Python
-
-Regression-based ML model
-
-CSV-based training data
-
-Tools
-
-Git & GitHub
-
-Eclipse / IntelliJ
-
-Postman (API testing)
-
-🧠 Core Concepts Implemented
-
-RESTful API design
-
-Java-based data preprocessing
-
-Feature extraction from historical data
-
-CSV data exchange between Java and ML
-
-Future demand prediction using ML
-
-Clean backend architecture (Controller → Service → Model)
+Thunder Client (VS Code)
 
 🧱 Application Architecture
-Client (Postman / Frontend)
+Client (Thunder Client / Postman)
         ↓
-Spring Boot REST API
+Spring Boot Controller
         ↓
-Service Layer (Java + DSA Logic)
+Service Layer (Business Logic)
         ↓
-Feature Engineering
-        ↓
-CSV Dataset
-        ↓
-Python ML Model
-        ↓
-Future Demand Prediction
-
-⚙️ API Features
-
-Accepts historical demand data via REST API
-
-Generates features:
-
-Average demand
-
-Day-to-day change
-
-Spike detection
-
-Integrates ML model for prediction
-
-Returns predicted future demand
-
-Modular and scalable backend design
+Response (JSON)
 
 📂 Project Structure
 Smart-Resource-Prediction-API/
 │
 ├── src/main/java/
-│   └── com/energy/demandapi/
+│   └── com/energy/resourceapi/
 │       ├── controller/        # REST Controllers
-│       ├── service/           # Business logic & DSA
-│       ├── model/             # Request/Response models
-│       └── App.java           # Main Spring Boot app
+│       ├── service/           # Business Logic
+│       ├── model/             # Request & Response DTOs
+│       └── Application.java   # Main Spring Boot class
 │
 ├── src/main/resources/
 │   └── application.properties
 │
-├── ml/                         # Python ML scripts
-├── pom.xml                     # Maven dependencies
-├── README.md                   # Documentation
-├── .gitignore                  # Ignored build files
+├── pom.xml
+├── README.md
+└── .gitignore
 
-🔌 API Endpoints
-📥 Predict Future Demand
+🔌 API Endpoint
+📥 Analyze Resource Demand
 
 Endpoint
 
-POST /api/predict
+POST /api/analyze
 
+📤 Request Body (JSON)
 
-Request Body (JSON)
+Use this JSON in Thunder Client:
 
 {
-  "pastDemand": [120, 130, 150, 170, 180]
+  "pastDemand": [120, 140, 160, 180, 200]
 }
 
-
-Response
-
+📤 Response (JSON)
 {
-  "averageDemand": 150.0,
+  "averageDemand": 160.0,
   "trend": "Increasing",
-  "spikeDetected": false,
-  "predictedDemand": 190
+  "message": "Resource demand is increasing"
 }
 
-🧪 How It Works
+🧪 Testing with Thunder Client
 
-Client sends historical demand data to API
+Open VS Code
 
-Spring Boot controller receives request
+Click Thunder Client
 
-Service layer applies DSA logic:
+Create a New Request
 
-Average calculation
+Method: POST
 
-Change detection
+URL:
 
-Spike identification
+http://localhost:8080/api/analyze
 
-Features are saved into CSV
 
-ML model processes data
+Header:
 
-API returns predicted future demand
+Content-Type: application/json
 
-📈 Use Cases
 
-Smart energy management systems
+Paste the JSON request body
 
-College or industry resource planning
+Click Send
 
-Demand forecasting applications
+⚙️ How the API Works
 
-Backend + ML integration learning project
+Client sends demand data in JSON format
 
-🧑‍💻 Learning Outcomes
+Spring Boot controller receives the request
 
-Strong understanding of Spring Boot REST APIs
+Service layer processes the data
 
-Hands-on experience with Java + DSA
+API returns analyzed results as JSON
 
-Feature engineering for ML
+🎓 Learning Outcomes
 
-Backend–ML integration
+Understanding Spring Boot project structure
 
-Clean API architecture
+Building REST APIs using Spring Web
 
-Professional GitHub project structure
+Handling JSON requests and responses
+
+Testing APIs using Thunder Client
+
+Writing clean controller and service layers
 
 🚀 Future Enhancements
 
-Real-time data ingestion
+Add database integration
 
-Database integration (MySQL/PostgreSQL)
+Add validation and exception handling
 
-Advanced ML models (LSTM, ARIMA)
+Add more analytical endpoints
 
-Frontend dashboard
-
-Cloud deployment (AWS)
+Add Swagger API documentation
 
 📬 Author
 
@@ -216,10 +144,8 @@ B.Tech – Computer Science & Engineering
 
 ⭐ Support
 
-If you like this project:
+If you find this project useful:
 
 ⭐ Star the repository
 
-🍴 Fork it
-
-📣 Share feedback
+🍴 Fork the repository
