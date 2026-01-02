@@ -1,113 +1,225 @@
-Smart Energy Demand Analysis API
+🚀 Smart Resource & Demand Prediction API
+
+(Spring Boot + Java + DSA + Machine Learning)
+
 📌 Project Overview
-This project is a Spring Boot REST API that analyzes energy demand data and predicts future demand based on historical usage patterns.
-It is designed as a backend service, focusing on clean logic, scalability, and real-world architecture.
 
-The API accepts daily energy consumption values, performs analysis such as trend detection and spike detection, and returns a structured prediction result in JSON format.
+The Smart Resource & Demand Prediction API is a Spring Boot–based RESTful backend application that analyzes historical resource (energy) demand and predicts future demand using Java logic, DSA-based feature engineering, and a Machine Learning model.
 
-🧠 Key Features
-Energy demand analysis using core Java logic
-Trend detection (Increasing / Decreasing / Stable)
-Spike detection based on threshold rules
-Rule-based demand prediction
-REST API built using Spring Boot
-Clean controller–service–model architecture
-🛠 Technologies Used
+This project demonstrates how backend APIs, core programming fundamentals, and ML models can be integrated to solve real-world demand forecasting problems.
+
+🎯 Problem Statement
+
+Resource demand (such as electricity or energy) varies due to:
+
+Daily usage patterns
+
+Sudden spikes
+
+Long-term trends
+
+Manual estimation is inefficient and inaccurate.
+This API automates:
+
+Demand analysis
+
+Feature extraction
+
+Future demand prediction
+
+using Java logic + ML, exposed through REST APIs.
+
+🛠️ Technologies Used
+Backend
+
 Java
+
 Spring Boot
+
+Spring Web (REST APIs)
+
 Maven
-REST API
-Embedded Tomcat
-JSON
-Eclipse / Spring Tool Suite
-Thunder Client / Postman (for testing)
+
+Core Concepts
+
+DSA (Arrays, loops, conditionals)
+
+OOPS
+
+Feature Engineering
+
+Machine Learning
+
+Python
+
+Regression-based ML model
+
+CSV-based training data
+
+Tools
+
+Git & GitHub
+
+Eclipse / IntelliJ
+
+Postman (API testing)
+
+🧠 Core Concepts Implemented
+
+RESTful API design
+
+Java-based data preprocessing
+
+Feature extraction from historical data
+
+CSV data exchange between Java and ML
+
+Future demand prediction using ML
+
+Clean backend architecture (Controller → Service → Model)
+
+🧱 Application Architecture
+Client (Postman / Frontend)
+        ↓
+Spring Boot REST API
+        ↓
+Service Layer (Java + DSA Logic)
+        ↓
+Feature Engineering
+        ↓
+CSV Dataset
+        ↓
+Python ML Model
+        ↓
+Future Demand Prediction
+
+⚙️ API Features
+
+Accepts historical demand data via REST API
+
+Generates features:
+
+Average demand
+
+Day-to-day change
+
+Spike detection
+
+Integrates ML model for prediction
+
+Returns predicted future demand
+
+Modular and scalable backend design
+
 📂 Project Structure
-src/main/java/com/energy/demandapi ├── controller │ └── DemandController.java ├── service │ └── DemandService.java ├── model │ ├── DemandRequest.java │ └── DemandResponse.java └── App.java
+Smart-Resource-Prediction-API/
+│
+├── src/main/java/
+│   └── com/energy/demandapi/
+│       ├── controller/        # REST Controllers
+│       ├── service/           # Business logic & DSA
+│       ├── model/             # Request/Response models
+│       └── App.java           # Main Spring Boot app
+│
+├── src/main/resources/
+│   └── application.properties
+│
+├── ml/                         # Python ML scripts
+├── pom.xml                     # Maven dependencies
+├── README.md                   # Documentation
+├── .gitignore                  # Ignored build files
 
-🔁 API Workflow
-Client sends demand data as JSON
-Controller receives the request
-Service layer performs analysis
-Response is returned as JSON
-🔗 API Endpoint
-Predict Demand
-URL: /predict-demand
-Method: POST
-Content-Type: application/json
-Sample Request
+🔌 API Endpoints
+📥 Predict Future Demand
+
+Endpoint
+
+POST /api/predict
+
+
+Request Body (JSON)
+
 {
-  "location": "Outskirts",
-  "demand": [50, 40, 30]
+  "pastDemand": [120, 130, 150, 170, 180]
 }
+
+
+Response
+
 {
-  "maxDemand": 50.0,
-  "minDemand": 30.0,
-  "averageDemand": 40.0,
-  "trend": "Decreasing Demand Trend",
-  "spikeDetected": true,
-  "predictedNextDemand": 33.0
+  "averageDemand": 150.0,
+  "trend": "Increasing",
+  "spikeDetected": false,
+  "predictedDemand": 190
 }
-How to Run the Project
-Prerequisites
 
-Java 17+ (or Java 21)
+🧪 How It Works
 
-Maven
+Client sends historical demand data to API
 
-Eclipse / Spring Tool Suite
+Spring Boot controller receives request
 
-Steps
+Service layer applies DSA logic:
 
-Clone the repository
+Average calculation
 
-Open the project in Eclipse / STS
+Change detection
 
-Run the application as Spring Boot App
+Spike identification
 
-Server starts on:
+Features are saved into CSV
 
-http://localhost:8081
+ML model processes data
 
-🧪 How to Test
+API returns predicted future demand
 
-Use Thunder Client or Postman:
+📈 Use Cases
 
-Method: POST
+Smart energy management systems
 
-URL: http://localhost:8081/predict-demand
+College or industry resource planning
 
-Body: JSON (see sample above)
+Demand forecasting applications
 
-📈 Future Enhancements
+Backend + ML integration learning project
 
-Integration with Machine Learning models
+🧑‍💻 Learning Outcomes
 
-Database storage for historical demand
+Strong understanding of Spring Boot REST APIs
 
-Advanced prediction algorithms
+Hands-on experience with Java + DSA
 
-Dashboard / frontend integration
+Feature engineering for ML
 
-👩‍💻 Author
+Backend–ML integration
+
+Clean API architecture
+
+Professional GitHub project structure
+
+🚀 Future Enhancements
+
+Real-time data ingestion
+
+Database integration (MySQL/PostgreSQL)
+
+Advanced ML models (LSTM, ARIMA)
+
+Frontend dashboard
+
+Cloud deployment (AWS)
+
+📬 Author
 
 Challagunda Nikhitha
+B.Tech – Computer Science & Engineering
 
-📌 Note
+⭐ Support
 
-This project focuses on backend system design and logic.
-Machine Learning integration is planned as a future enhancement after sufficient historical data collection.
+If you like this project:
 
+⭐ Star the repository
 
----
+🍴 Fork it
 
-## ✅ What to do next (VERY IMPORTANT)
-
-1️⃣ In your project folder, create a file named **`README.md`**  
-2️⃣ Paste the above content  
-3️⃣ Save the file  
-4️⃣ Run these commands:
-
-```bash
-git add README.md
-git commit -m "Add README documentation"
-git push
+📣 Share feedback
